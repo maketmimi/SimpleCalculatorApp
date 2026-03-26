@@ -1,6 +1,6 @@
 ﻿namespace SimpleCalculatorApp
 {
-    partial class StandredCalac
+    partial class FrStandredCalacScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StandredCalac));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrStandredCalacScreen));
             this.BtPercent = new System.Windows.Forms.Button();
             this.BtClearInputScreen = new System.Windows.Forms.Button();
             this.BtClearAll = new System.Windows.Forms.Button();
@@ -61,11 +61,12 @@
             // BtPercent
             // 
             this.BtPercent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.BtPercent.Enabled = false;
             this.BtPercent.FlatAppearance.BorderSize = 0;
             this.BtPercent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BtPercent.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.BtPercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtPercent.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtPercent.Font = new System.Drawing.Font("Segoe UI Symbol", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtPercent.ForeColor = System.Drawing.Color.White;
             this.BtPercent.Location = new System.Drawing.Point(7, 169);
             this.BtPercent.Name = "BtPercent";
@@ -89,6 +90,7 @@
             this.BtClearInputScreen.TabIndex = 1;
             this.BtClearInputScreen.Text = "CE";
             this.BtClearInputScreen.UseVisualStyleBackColor = false;
+            this.BtClearInputScreen.Click += new System.EventHandler(this.ClearMainDisplay_Click);
             // 
             // BtClearAll
             // 
@@ -105,6 +107,7 @@
             this.BtClearAll.TabIndex = 2;
             this.BtClearAll.Text = "C";
             this.BtClearAll.UseVisualStyleBackColor = false;
+            this.BtClearAll.Click += new System.EventHandler(this.BtClearAll_Click);
             // 
             // BtBackSpace
             // 
@@ -113,7 +116,7 @@
             this.BtBackSpace.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BtBackSpace.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.BtBackSpace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtBackSpace.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtBackSpace.Font = new System.Drawing.Font("Segoe UI Symbol", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtBackSpace.ForeColor = System.Drawing.Color.White;
             this.BtBackSpace.Location = new System.Drawing.Point(280, 169);
             this.BtBackSpace.Name = "BtBackSpace";
@@ -121,10 +124,12 @@
             this.BtBackSpace.TabIndex = 4;
             this.BtBackSpace.Text = "⌫";
             this.BtBackSpace.UseVisualStyleBackColor = false;
+            this.BtBackSpace.Click += new System.EventHandler(this.BtBackSpace_Click);
             // 
             // BtMoudule
             // 
             this.BtMoudule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.BtMoudule.Enabled = false;
             this.BtMoudule.FlatAppearance.BorderSize = 0;
             this.BtMoudule.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BtMoudule.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
@@ -145,7 +150,7 @@
             this.BtSignToggle.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.BtSignToggle.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BtSignToggle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtSignToggle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtSignToggle.Font = new System.Drawing.Font("Segoe UI Symbol", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtSignToggle.ForeColor = System.Drawing.Color.White;
             this.BtSignToggle.Location = new System.Drawing.Point(7, 469);
             this.BtSignToggle.Name = "BtSignToggle";
@@ -153,6 +158,7 @@
             this.BtSignToggle.TabIndex = 6;
             this.BtSignToggle.Text = "+/-";
             this.BtSignToggle.UseVisualStyleBackColor = false;
+            this.BtSignToggle.Click += new System.EventHandler(this.BtSignToggle_Click);
             // 
             // BtNumber1
             // 
@@ -167,8 +173,10 @@
             this.BtNumber1.Name = "BtNumber1";
             this.BtNumber1.Size = new System.Drawing.Size(87, 54);
             this.BtNumber1.TabIndex = 7;
+            this.BtNumber1.Tag = "1";
             this.BtNumber1.Text = "1";
             this.BtNumber1.UseVisualStyleBackColor = false;
+            this.BtNumber1.Click += new System.EventHandler(this.ShowCharOnMainDisplay_Click);
             // 
             // BtNumber4
             // 
@@ -183,8 +191,10 @@
             this.BtNumber4.Name = "BtNumber4";
             this.BtNumber4.Size = new System.Drawing.Size(87, 54);
             this.BtNumber4.TabIndex = 8;
+            this.BtNumber4.Tag = "4";
             this.BtNumber4.Text = "4";
             this.BtNumber4.UseVisualStyleBackColor = false;
+            this.BtNumber4.Click += new System.EventHandler(this.ShowCharOnMainDisplay_Click);
             // 
             // BtNumber7
             // 
@@ -199,8 +209,10 @@
             this.BtNumber7.Name = "BtNumber7";
             this.BtNumber7.Size = new System.Drawing.Size(87, 54);
             this.BtNumber7.TabIndex = 9;
+            this.BtNumber7.Tag = "7";
             this.BtNumber7.Text = "7";
             this.BtNumber7.UseVisualStyleBackColor = false;
+            this.BtNumber7.Click += new System.EventHandler(this.ShowCharOnMainDisplay_Click);
             // 
             // BtNumber8
             // 
@@ -215,8 +227,10 @@
             this.BtNumber8.Name = "BtNumber8";
             this.BtNumber8.Size = new System.Drawing.Size(87, 54);
             this.BtNumber8.TabIndex = 14;
+            this.BtNumber8.Tag = "8";
             this.BtNumber8.Text = "8";
             this.BtNumber8.UseVisualStyleBackColor = false;
+            this.BtNumber8.Click += new System.EventHandler(this.ShowCharOnMainDisplay_Click);
             // 
             // BtNumber5
             // 
@@ -231,8 +245,10 @@
             this.BtNumber5.Name = "BtNumber5";
             this.BtNumber5.Size = new System.Drawing.Size(87, 54);
             this.BtNumber5.TabIndex = 13;
+            this.BtNumber5.Tag = "5";
             this.BtNumber5.Text = "5";
             this.BtNumber5.UseVisualStyleBackColor = false;
+            this.BtNumber5.Click += new System.EventHandler(this.ShowCharOnMainDisplay_Click);
             // 
             // BtNumber2
             // 
@@ -247,8 +263,10 @@
             this.BtNumber2.Name = "BtNumber2";
             this.BtNumber2.Size = new System.Drawing.Size(87, 54);
             this.BtNumber2.TabIndex = 12;
+            this.BtNumber2.Tag = "2";
             this.BtNumber2.Text = "2";
             this.BtNumber2.UseVisualStyleBackColor = false;
+            this.BtNumber2.Click += new System.EventHandler(this.ShowCharOnMainDisplay_Click);
             // 
             // BtNumber0
             // 
@@ -263,8 +281,10 @@
             this.BtNumber0.Name = "BtNumber0";
             this.BtNumber0.Size = new System.Drawing.Size(87, 54);
             this.BtNumber0.TabIndex = 11;
+            this.BtNumber0.Tag = "0";
             this.BtNumber0.Text = "0";
             this.BtNumber0.UseVisualStyleBackColor = false;
+            this.BtNumber0.Click += new System.EventHandler(this.ShowCharOnMainDisplay_Click);
             // 
             // BtSquare
             // 
@@ -273,14 +293,15 @@
             this.BtSquare.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BtSquare.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.BtSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtSquare.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtSquare.Font = new System.Drawing.Font("Segoe UI Symbol", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtSquare.ForeColor = System.Drawing.Color.White;
             this.BtSquare.Location = new System.Drawing.Point(98, 229);
             this.BtSquare.Name = "BtSquare";
             this.BtSquare.Size = new System.Drawing.Size(87, 54);
             this.BtSquare.TabIndex = 10;
-            this.BtSquare.Text = "x^2";
+            this.BtSquare.Text = "𝑥²";
             this.BtSquare.UseVisualStyleBackColor = false;
+            this.BtSquare.Click += new System.EventHandler(this.BtSquare_Click);
             // 
             // BtNumber9
             // 
@@ -295,8 +316,10 @@
             this.BtNumber9.Name = "BtNumber9";
             this.BtNumber9.Size = new System.Drawing.Size(87, 54);
             this.BtNumber9.TabIndex = 19;
+            this.BtNumber9.Tag = "9";
             this.BtNumber9.Text = "9";
             this.BtNumber9.UseVisualStyleBackColor = false;
+            this.BtNumber9.Click += new System.EventHandler(this.ShowCharOnMainDisplay_Click);
             // 
             // BtNumber6
             // 
@@ -311,8 +334,10 @@
             this.BtNumber6.Name = "BtNumber6";
             this.BtNumber6.Size = new System.Drawing.Size(87, 54);
             this.BtNumber6.TabIndex = 18;
+            this.BtNumber6.Tag = "6";
             this.BtNumber6.Text = "6";
             this.BtNumber6.UseVisualStyleBackColor = false;
+            this.BtNumber6.Click += new System.EventHandler(this.ShowCharOnMainDisplay_Click);
             // 
             // BtNumber3
             // 
@@ -327,8 +352,10 @@
             this.BtNumber3.Name = "BtNumber3";
             this.BtNumber3.Size = new System.Drawing.Size(87, 54);
             this.BtNumber3.TabIndex = 17;
+            this.BtNumber3.Tag = "3";
             this.BtNumber3.Text = "3";
             this.BtNumber3.UseVisualStyleBackColor = false;
+            this.BtNumber3.Click += new System.EventHandler(this.ShowCharOnMainDisplay_Click);
             // 
             // BtPeriod
             // 
@@ -343,8 +370,10 @@
             this.BtPeriod.Name = "BtPeriod";
             this.BtPeriod.Size = new System.Drawing.Size(87, 54);
             this.BtPeriod.TabIndex = 16;
+            this.BtPeriod.Tag = ".";
             this.BtPeriod.Text = ".";
             this.BtPeriod.UseVisualStyleBackColor = false;
+            this.BtPeriod.Click += new System.EventHandler(this.ShowPeriodOnMainDisplay_Click);
             // 
             // BTSqrt
             // 
@@ -353,14 +382,15 @@
             this.BTSqrt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BTSqrt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.BTSqrt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTSqrt.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTSqrt.Font = new System.Drawing.Font("NanumGothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTSqrt.ForeColor = System.Drawing.Color.White;
             this.BTSqrt.Location = new System.Drawing.Point(189, 229);
             this.BTSqrt.Name = "BTSqrt";
             this.BTSqrt.Size = new System.Drawing.Size(87, 54);
             this.BTSqrt.TabIndex = 15;
-            this.BTSqrt.Text = "Sqrt";
+            this.BTSqrt.Text = "√";
             this.BTSqrt.UseVisualStyleBackColor = false;
+            this.BTSqrt.Click += new System.EventHandler(this.BTSqrt_Click);
             // 
             // BtMultiply
             // 
@@ -369,7 +399,7 @@
             this.BtMultiply.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BtMultiply.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.BtMultiply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtMultiply.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtMultiply.Font = new System.Drawing.Font("Segoe UI Symbol", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtMultiply.ForeColor = System.Drawing.Color.White;
             this.BtMultiply.Location = new System.Drawing.Point(280, 289);
             this.BtMultiply.Name = "BtMultiply";
@@ -377,6 +407,7 @@
             this.BtMultiply.TabIndex = 24;
             this.BtMultiply.Text = "×";
             this.BtMultiply.UseVisualStyleBackColor = false;
+            this.BtMultiply.Click += new System.EventHandler(this.OperationButtonClicked);
             // 
             // BtSubtract
             // 
@@ -385,7 +416,7 @@
             this.BtSubtract.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BtSubtract.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.BtSubtract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtSubtract.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtSubtract.Font = new System.Drawing.Font("Segoe UI Symbol", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtSubtract.ForeColor = System.Drawing.Color.White;
             this.BtSubtract.Location = new System.Drawing.Point(280, 349);
             this.BtSubtract.Name = "BtSubtract";
@@ -393,6 +424,7 @@
             this.BtSubtract.TabIndex = 23;
             this.BtSubtract.Text = "-";
             this.BtSubtract.UseVisualStyleBackColor = false;
+            this.BtSubtract.Click += new System.EventHandler(this.OperationButtonClicked);
             // 
             // BtAdd
             // 
@@ -401,7 +433,7 @@
             this.BtAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BtAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.BtAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtAdd.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtAdd.Font = new System.Drawing.Font("Segoe UI Symbol", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtAdd.ForeColor = System.Drawing.Color.White;
             this.BtAdd.Location = new System.Drawing.Point(280, 409);
             this.BtAdd.Name = "BtAdd";
@@ -409,6 +441,7 @@
             this.BtAdd.TabIndex = 22;
             this.BtAdd.Text = "+";
             this.BtAdd.UseVisualStyleBackColor = false;
+            this.BtAdd.Click += new System.EventHandler(this.OperationButtonClicked);
             // 
             // BtEqual
             // 
@@ -417,7 +450,7 @@
             this.BtEqual.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(171)))), ((int)(((byte)(210)))));
             this.BtEqual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(189)))), ((int)(((byte)(232)))));
             this.BtEqual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtEqual.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtEqual.Font = new System.Drawing.Font("Segoe UI Symbol", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtEqual.ForeColor = System.Drawing.Color.Black;
             this.BtEqual.Location = new System.Drawing.Point(280, 469);
             this.BtEqual.Name = "BtEqual";
@@ -425,6 +458,7 @@
             this.BtEqual.TabIndex = 21;
             this.BtEqual.Text = "=";
             this.BtEqual.UseVisualStyleBackColor = false;
+            this.BtEqual.Click += new System.EventHandler(this.BtEqual_Click);
             // 
             // BtDivide
             // 
@@ -433,7 +467,7 @@
             this.BtDivide.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BtDivide.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
             this.BtDivide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtDivide.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtDivide.Font = new System.Drawing.Font("Segoe UI Symbol", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtDivide.ForeColor = System.Drawing.Color.White;
             this.BtDivide.Location = new System.Drawing.Point(280, 229);
             this.BtDivide.Name = "BtDivide";
@@ -441,6 +475,7 @@
             this.BtDivide.TabIndex = 20;
             this.BtDivide.Text = "÷";
             this.BtDivide.UseVisualStyleBackColor = false;
+            this.BtDivide.Click += new System.EventHandler(this.OperationButtonClicked);
             // 
             // ScreenTitle
             // 
@@ -456,18 +491,21 @@
             // 
             // TxtMainDisplay
             // 
-            this.TxtMainDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.TxtMainDisplay.BackColor = System.Drawing.Color.White;
             this.TxtMainDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtMainDisplay.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMainDisplay.ForeColor = System.Drawing.Color.White;
             this.TxtMainDisplay.Location = new System.Drawing.Point(7, 92);
+            this.TxtMainDisplay.Multiline = true;
             this.TxtMainDisplay.Name = "TxtMainDisplay";
             this.TxtMainDisplay.ReadOnly = true;
+            this.TxtMainDisplay.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.TxtMainDisplay.Size = new System.Drawing.Size(360, 64);
             this.TxtMainDisplay.TabIndex = 27;
             this.TxtMainDisplay.Text = "0";
             this.TxtMainDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtMainDisplay.WordWrap = false;
+            this.TxtMainDisplay.TextChanged += new System.EventHandler(this.TxtMainDisplay_TextChanged);
             // 
             // TxtSubDisplay
             // 
@@ -476,14 +514,16 @@
             this.TxtSubDisplay.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtSubDisplay.ForeColor = System.Drawing.Color.Silver;
             this.TxtSubDisplay.Location = new System.Drawing.Point(7, 54);
+            this.TxtSubDisplay.Multiline = true;
             this.TxtSubDisplay.Name = "TxtSubDisplay";
             this.TxtSubDisplay.ReadOnly = true;
             this.TxtSubDisplay.Size = new System.Drawing.Size(360, 32);
             this.TxtSubDisplay.TabIndex = 28;
             this.TxtSubDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtSubDisplay.WordWrap = false;
+            this.TxtSubDisplay.TextChanged += new System.EventHandler(this.TxtSubDisplay_TextChanged);
             // 
-            // StandredCalac
+            // FrStandredCalacScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -519,7 +559,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "StandredCalac";
+            this.Name = "FrStandredCalacScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calac - Standred";
             this.ResumeLayout(false);
