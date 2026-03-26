@@ -491,15 +491,13 @@
             // 
             // TxtMainDisplay
             // 
-            this.TxtMainDisplay.BackColor = System.Drawing.Color.White;
+            this.TxtMainDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.TxtMainDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TxtMainDisplay.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtMainDisplay.ForeColor = System.Drawing.Color.White;
             this.TxtMainDisplay.Location = new System.Drawing.Point(7, 92);
-            this.TxtMainDisplay.Multiline = true;
             this.TxtMainDisplay.Name = "TxtMainDisplay";
             this.TxtMainDisplay.ReadOnly = true;
-            this.TxtMainDisplay.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.TxtMainDisplay.Size = new System.Drawing.Size(360, 64);
             this.TxtMainDisplay.TabIndex = 27;
             this.TxtMainDisplay.Text = "0";
@@ -513,7 +511,6 @@
             this.TxtSubDisplay.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtSubDisplay.ForeColor = System.Drawing.Color.Silver;
             this.TxtSubDisplay.Location = new System.Drawing.Point(7, 54);
-            this.TxtSubDisplay.Multiline = true;
             this.TxtSubDisplay.Name = "TxtSubDisplay";
             this.TxtSubDisplay.ReadOnly = true;
             this.TxtSubDisplay.Size = new System.Drawing.Size(360, 32);
