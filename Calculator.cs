@@ -15,13 +15,15 @@ namespace SimpleCalculatorApp
             Add,
             Subtract,
             Multiply,
-            Divide
+            Divide,
+            Mod
         }
 
         public enum EnOperationResultState : byte
         {
             Successful,
             ErrorDivideByZero,
+            ErrorOperandNotInteger,
             ErrorFailed
         }
 
@@ -40,12 +42,12 @@ namespace SimpleCalculatorApp
             Result *= NumberToMultiply;
         }
 
-        public bool Divide(double NumberToDivide)
+        public EnOperationResultState Divide(double NumberToDivide)
         {
-            if (NumberToDivide == 0) return false;
+            if (NumberToDivide == 0) return EnOperationResultState.ErrorDivideByZero;
 
             Result /= NumberToDivide;
-            return true;
+            return EnOperationResultState.Successful;
         }
 
         public EnOperationResultState PerformOperation(double Number, EnOperations Operation)
@@ -62,7 +64,9 @@ namespace SimpleCalculatorApp
                     Multiply(Number);
                     break;
                 case EnOperations.Divide:
-                    return Divide(Number)? EnOperationResultState.Successful : EnOperationResultState.ErrorDivideByZero;
+                    return Divide(Number);
+                case EnOperations.Mod:
+                    return Mod(Number); 
                 default:
                     return EnOperationResultState.ErrorFailed;
             }
@@ -83,6 +87,37 @@ namespace SimpleCalculatorApp
         public static double GetSquare(double Number)
         {
             return Math.Pow(Number, 2);
+        }
+
+        private static bool IsInteger(double NumberToCheck)
+        {
+            // in case you wonder how this works
+            // then simply think of it as it calcultes the nearest 
+            // integer of the number and checks how far it is 
+            // in case it is too far this means the number is not integer
+            // other wise it will be so close and that means the number
+            // is usually a slightly off integer 
+
+            return Math.Abs(NumberToCheck - Math.Round(NumberToCheck)) < 1e-9;
+        }
+
+        public EnOperationResultState Mod(double Divisor)
+        {
+            if (Divisor == 0)
+                return EnOperationResultState.ErrorDivideByZero;
+
+
+            if (IsInteger(Result) && IsInteger(Divisor))
+            {
+                int LeftOperand = ((int)Math.Round(Result));
+                int RightOperand = ((int)Math.Round(Divisor));
+
+                Result = LeftOperand % RightOperand;
+                
+                return EnOperationResultState.Successful;
+            }
+            else
+                return EnOperationResultState.ErrorOperandNotInteger;
         }
 
     }

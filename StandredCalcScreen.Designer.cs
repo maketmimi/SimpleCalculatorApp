@@ -129,7 +129,6 @@
             // BtMoudule
             // 
             this.BtMoudule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.BtMoudule.Enabled = false;
             this.BtMoudule.FlatAppearance.BorderSize = 0;
             this.BtMoudule.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.BtMoudule.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
@@ -142,6 +141,7 @@
             this.BtMoudule.TabIndex = 5;
             this.BtMoudule.Text = "Mod";
             this.BtMoudule.UseVisualStyleBackColor = false;
+            this.BtMoudule.Click += new System.EventHandler(this.OperationButtonClicked);
             // 
             // BtSignToggle
             // 

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Security.Cryptography;
 using System.Windows.Forms;
 
@@ -10,6 +12,16 @@ namespace SimpleCalculatorApp
 		private readonly Calculator calculator = new Calculator();
 		private Calculator.EnOperations CurrentOperation = Calculator.EnOperations.Add;
 		private EnCalculatorState CurrentCalculatorState = EnCalculatorState.Ready;
+
+		private readonly Dictionary<Calculator.EnOperations, string> OperationToSymbol = 
+			new Dictionary<Calculator.EnOperations, string>()
+		{
+			{Calculator.EnOperations.Add, "+" },
+			{Calculator.EnOperations.Subtract, "-" },
+			{Calculator.EnOperations.Multiply, "×" },
+			{Calculator.EnOperations.Divide, "÷" },
+			{Calculator.EnOperations.Mod, "Mod" }
+		};
 
 		private enum EnCalculatorState
 		{
@@ -33,30 +45,6 @@ namespace SimpleCalculatorApp
 			InitializeComponent();
 			InitializeOperationsButtons();
 			SetMainDisplyToDefault();
-		}
-
-		private char GetOperationSymbol(Calculator.EnOperations Operation)
-		{
-			switch (Operation)
-			{
-				case Calculator.EnOperations.Add:
-					return '+';
-				case Calculator.EnOperations.Subtract:
-					return '-';
-				case Calculator.EnOperations.Multiply:
-					return '×';
-				case Calculator.EnOperations.Divide:
-					return '÷';
-				default:
-					return '?';
-			}
-		}
-
-		private bool IsOperationSymbol(char SymbolToCheck)
-		{
-			char[] Symbols = { '+', '-', '×', '÷' };
-
-			return Symbols.Contains(SymbolToCheck);
 		}
 
 		private void ResetCalculator()
@@ -95,6 +83,7 @@ namespace SimpleCalculatorApp
 			BtSubtract.Tag = Calculator.EnOperations.Subtract;
 			BtMultiply.Tag = Calculator.EnOperations.Multiply;
 			BtDivide.Tag = Calculator.EnOperations.Divide;
+			BtMoudule.Tag = Calculator.EnOperations.Mod;
 		}
 
 		private void SetMainDisplyToDefault()
@@ -180,14 +169,19 @@ namespace SimpleCalculatorApp
 
 		private void ShowOperationResult(Calculator.EnOperationResultState ResultState)
 		{
+			AddContentToSubDisplay(TxtMainDisplay.Text);
+			
 			switch (ResultState)
 			{
 				case Calculator.EnOperationResultState.Successful:
-					AddContentToSubDisplay(TxtMainDisplay.Text);
 					AddValidOperationResultToMainDisplay();
 					break;
 				case Calculator.EnOperationResultState.ErrorDivideByZero:
 					TxtMainDisplay.Text = "Cannot divide by 0";
+					SetMainDisplayState(EnMainDisplayState.Error);
+					break;
+				case Calculator.EnOperationResultState.ErrorOperandNotInteger:
+					TxtMainDisplay.Text = "Operand Not Integer";
 					SetMainDisplayState(EnMainDisplayState.Error);
 					break;
 				case Calculator.EnOperationResultState.ErrorFailed:
@@ -260,9 +254,8 @@ namespace SimpleCalculatorApp
 				CurrentCalculatorState = EnCalculatorState.Error;
 		}
 
-		private void AddOperationSymbolToSubDisplay(char OperationSymbol)
+		private void AddOperationSymbolToSubDisplay(Calculator.EnOperations Operation)
 		{
-
 			// it has an initial Value not equal to default (0)
             if (TxtSubDisplay.Text.Length == 0)
 			{
@@ -270,16 +263,15 @@ namespace SimpleCalculatorApp
 				PerformOperation(CurrentOperation);
 			}
 
-
-            if (IsOperationSymbol(TxtSubDisplay.Text.Last()))
+            if (StringHelpers.StringEndsWithAny(TxtSubDisplay.Text, OperationToSymbol.Values.ToArray(), out string PrevSymbol))
             {
-                TxtSubDisplay.Text =
-                    TxtSubDisplay.Text.Substring(0, TxtSubDisplay.Text.Length - 1)
-                    + OperationSymbol;
+				TxtSubDisplay.Text =
+					TxtSubDisplay.Text.Substring(0, TxtSubDisplay.Text.Length - PrevSymbol.Length)
+					+ OperationToSymbol[Operation];
             }
             else
             {
-				AddContentToSubDisplay(OperationSymbol.ToString());
+				AddContentToSubDisplay(OperationToSymbol[Operation]);
             }
         }
 
@@ -297,7 +289,7 @@ namespace SimpleCalculatorApp
 				Calculator.EnOperations NextOperationToPerform =
 					(Calculator.EnOperations) ((Button)sender).Tag;
 
-				AddOperationSymbolToSubDisplay(GetOperationSymbol(NextOperationToPerform));
+				AddOperationSymbolToSubDisplay(NextOperationToPerform);
 
                 CurrentOperation = NextOperationToPerform;
 			}
