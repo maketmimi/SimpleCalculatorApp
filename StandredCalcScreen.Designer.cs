@@ -505,7 +505,6 @@
             this.TxtMainDisplay.Text = "0";
             this.TxtMainDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtMainDisplay.WordWrap = false;
-            this.TxtMainDisplay.TextChanged += new System.EventHandler(this.TxtMainDisplay_TextChanged);
             // 
             // TxtSubDisplay
             // 
@@ -521,7 +520,6 @@
             this.TxtSubDisplay.TabIndex = 28;
             this.TxtSubDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtSubDisplay.WordWrap = false;
-            this.TxtSubDisplay.TextChanged += new System.EventHandler(this.TxtSubDisplay_TextChanged);
             // 
             // FrStandredCalacScreen
             // 
