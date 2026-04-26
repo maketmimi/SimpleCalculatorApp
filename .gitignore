@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+# Not needed
+Social Media/
+
 # User-specific files
 *.rsuser
 *.suo

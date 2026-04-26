@@ -72,6 +72,7 @@
             this.BtPercent.Name = "BtPercent";
             this.BtPercent.Size = new System.Drawing.Size(87, 54);
             this.BtPercent.TabIndex = 0;
+            this.BtPercent.TabStop = false;
             this.BtPercent.Text = "%";
             this.BtPercent.UseVisualStyleBackColor = false;
             // 
@@ -88,6 +89,7 @@
             this.BtClearInputScreen.Name = "BtClearInputScreen";
             this.BtClearInputScreen.Size = new System.Drawing.Size(87, 54);
             this.BtClearInputScreen.TabIndex = 1;
+            this.BtClearInputScreen.TabStop = false;
             this.BtClearInputScreen.Text = "CE";
             this.BtClearInputScreen.UseVisualStyleBackColor = false;
             this.BtClearInputScreen.Click += new System.EventHandler(this.ClearMainDisplay_Click);
@@ -105,6 +107,7 @@
             this.BtClearAll.Name = "BtClearAll";
             this.BtClearAll.Size = new System.Drawing.Size(87, 54);
             this.BtClearAll.TabIndex = 2;
+            this.BtClearAll.TabStop = false;
             this.BtClearAll.Text = "C";
             this.BtClearAll.UseVisualStyleBackColor = false;
             this.BtClearAll.Click += new System.EventHandler(this.BtClearAll_Click);
@@ -122,6 +125,7 @@
             this.BtBackSpace.Name = "BtBackSpace";
             this.BtBackSpace.Size = new System.Drawing.Size(87, 54);
             this.BtBackSpace.TabIndex = 4;
+            this.BtBackSpace.TabStop = false;
             this.BtBackSpace.Text = "⌫";
             this.BtBackSpace.UseVisualStyleBackColor = false;
             this.BtBackSpace.Click += new System.EventHandler(this.BtBackSpace_Click);
@@ -139,6 +143,7 @@
             this.BtMoudule.Name = "BtMoudule";
             this.BtMoudule.Size = new System.Drawing.Size(87, 54);
             this.BtMoudule.TabIndex = 5;
+            this.BtMoudule.TabStop = false;
             this.BtMoudule.Text = "Mod";
             this.BtMoudule.UseVisualStyleBackColor = false;
             this.BtMoudule.Click += new System.EventHandler(this.OperationButtonClicked);
@@ -156,6 +161,7 @@
             this.BtSignToggle.Name = "BtSignToggle";
             this.BtSignToggle.Size = new System.Drawing.Size(87, 54);
             this.BtSignToggle.TabIndex = 6;
+            this.BtSignToggle.TabStop = false;
             this.BtSignToggle.Text = "+/-";
             this.BtSignToggle.UseVisualStyleBackColor = false;
             this.BtSignToggle.Click += new System.EventHandler(this.BtSignToggle_Click);
@@ -173,6 +179,7 @@
             this.BtNumber1.Name = "BtNumber1";
             this.BtNumber1.Size = new System.Drawing.Size(87, 54);
             this.BtNumber1.TabIndex = 7;
+            this.BtNumber1.TabStop = false;
             this.BtNumber1.Tag = "1";
             this.BtNumber1.Text = "1";
             this.BtNumber1.UseVisualStyleBackColor = false;
@@ -191,6 +198,7 @@
             this.BtNumber4.Name = "BtNumber4";
             this.BtNumber4.Size = new System.Drawing.Size(87, 54);
             this.BtNumber4.TabIndex = 8;
+            this.BtNumber4.TabStop = false;
             this.BtNumber4.Tag = "4";
             this.BtNumber4.Text = "4";
             this.BtNumber4.UseVisualStyleBackColor = false;
@@ -209,6 +217,7 @@
             this.BtNumber7.Name = "BtNumber7";
             this.BtNumber7.Size = new System.Drawing.Size(87, 54);
             this.BtNumber7.TabIndex = 9;
+            this.BtNumber7.TabStop = false;
             this.BtNumber7.Tag = "7";
             this.BtNumber7.Text = "7";
             this.BtNumber7.UseVisualStyleBackColor = false;
@@ -227,6 +236,7 @@
             this.BtNumber8.Name = "BtNumber8";
             this.BtNumber8.Size = new System.Drawing.Size(87, 54);
             this.BtNumber8.TabIndex = 14;
+            this.BtNumber8.TabStop = false;
             this.BtNumber8.Tag = "8";
             this.BtNumber8.Text = "8";
             this.BtNumber8.UseVisualStyleBackColor = false;
@@ -245,6 +255,7 @@
             this.BtNumber5.Name = "BtNumber5";
             this.BtNumber5.Size = new System.Drawing.Size(87, 54);
             this.BtNumber5.TabIndex = 13;
+            this.BtNumber5.TabStop = false;
             this.BtNumber5.Tag = "5";
             this.BtNumber5.Text = "5";
             this.BtNumber5.UseVisualStyleBackColor = false;
@@ -263,6 +274,7 @@
             this.BtNumber2.Name = "BtNumber2";
             this.BtNumber2.Size = new System.Drawing.Size(87, 54);
             this.BtNumber2.TabIndex = 12;
+            this.BtNumber2.TabStop = false;
             this.BtNumber2.Tag = "2";
             this.BtNumber2.Text = "2";
             this.BtNumber2.UseVisualStyleBackColor = false;
@@ -281,6 +293,7 @@
             this.BtNumber0.Name = "BtNumber0";
             this.BtNumber0.Size = new System.Drawing.Size(87, 54);
             this.BtNumber0.TabIndex = 11;
+            this.BtNumber0.TabStop = false;
             this.BtNumber0.Tag = "0";
             this.BtNumber0.Text = "0";
             this.BtNumber0.UseVisualStyleBackColor = false;
@@ -299,6 +312,7 @@
             this.BtSquare.Name = "BtSquare";
             this.BtSquare.Size = new System.Drawing.Size(87, 54);
             this.BtSquare.TabIndex = 10;
+            this.BtSquare.TabStop = false;
             this.BtSquare.Text = "𝑥²";
             this.BtSquare.UseVisualStyleBackColor = false;
             this.BtSquare.Click += new System.EventHandler(this.BtSquare_Click);
@@ -316,6 +330,7 @@
             this.BtNumber9.Name = "BtNumber9";
             this.BtNumber9.Size = new System.Drawing.Size(87, 54);
             this.BtNumber9.TabIndex = 19;
+            this.BtNumber9.TabStop = false;
             this.BtNumber9.Tag = "9";
             this.BtNumber9.Text = "9";
             this.BtNumber9.UseVisualStyleBackColor = false;
@@ -334,6 +349,7 @@
             this.BtNumber6.Name = "BtNumber6";
             this.BtNumber6.Size = new System.Drawing.Size(87, 54);
             this.BtNumber6.TabIndex = 18;
+            this.BtNumber6.TabStop = false;
             this.BtNumber6.Tag = "6";
             this.BtNumber6.Text = "6";
             this.BtNumber6.UseVisualStyleBackColor = false;
@@ -352,6 +368,7 @@
             this.BtNumber3.Name = "BtNumber3";
             this.BtNumber3.Size = new System.Drawing.Size(87, 54);
             this.BtNumber3.TabIndex = 17;
+            this.BtNumber3.TabStop = false;
             this.BtNumber3.Tag = "3";
             this.BtNumber3.Text = "3";
             this.BtNumber3.UseVisualStyleBackColor = false;
@@ -370,6 +387,7 @@
             this.BtPeriod.Name = "BtPeriod";
             this.BtPeriod.Size = new System.Drawing.Size(87, 54);
             this.BtPeriod.TabIndex = 16;
+            this.BtPeriod.TabStop = false;
             this.BtPeriod.Tag = ".";
             this.BtPeriod.Text = ".";
             this.BtPeriod.UseVisualStyleBackColor = false;
@@ -388,6 +406,7 @@
             this.BTSqrt.Name = "BTSqrt";
             this.BTSqrt.Size = new System.Drawing.Size(87, 54);
             this.BTSqrt.TabIndex = 15;
+            this.BTSqrt.TabStop = false;
             this.BTSqrt.Text = "√";
             this.BTSqrt.UseVisualStyleBackColor = false;
             this.BTSqrt.Click += new System.EventHandler(this.BTSqrt_Click);
@@ -405,6 +424,7 @@
             this.BtMultiply.Name = "BtMultiply";
             this.BtMultiply.Size = new System.Drawing.Size(87, 54);
             this.BtMultiply.TabIndex = 24;
+            this.BtMultiply.TabStop = false;
             this.BtMultiply.Text = "×";
             this.BtMultiply.UseVisualStyleBackColor = false;
             this.BtMultiply.Click += new System.EventHandler(this.OperationButtonClicked);
@@ -422,6 +442,7 @@
             this.BtSubtract.Name = "BtSubtract";
             this.BtSubtract.Size = new System.Drawing.Size(87, 54);
             this.BtSubtract.TabIndex = 23;
+            this.BtSubtract.TabStop = false;
             this.BtSubtract.Text = "-";
             this.BtSubtract.UseVisualStyleBackColor = false;
             this.BtSubtract.Click += new System.EventHandler(this.OperationButtonClicked);
@@ -439,6 +460,7 @@
             this.BtAdd.Name = "BtAdd";
             this.BtAdd.Size = new System.Drawing.Size(87, 54);
             this.BtAdd.TabIndex = 22;
+            this.BtAdd.TabStop = false;
             this.BtAdd.Text = "+";
             this.BtAdd.UseVisualStyleBackColor = false;
             this.BtAdd.Click += new System.EventHandler(this.OperationButtonClicked);
@@ -456,6 +478,7 @@
             this.BtEqual.Name = "BtEqual";
             this.BtEqual.Size = new System.Drawing.Size(87, 54);
             this.BtEqual.TabIndex = 21;
+            this.BtEqual.TabStop = false;
             this.BtEqual.Text = "=";
             this.BtEqual.UseVisualStyleBackColor = false;
             this.BtEqual.Click += new System.EventHandler(this.BtEqual_Click);
@@ -473,6 +496,7 @@
             this.BtDivide.Name = "BtDivide";
             this.BtDivide.Size = new System.Drawing.Size(87, 54);
             this.BtDivide.TabIndex = 20;
+            this.BtDivide.TabStop = false;
             this.BtDivide.Text = "÷";
             this.BtDivide.UseVisualStyleBackColor = false;
             this.BtDivide.Click += new System.EventHandler(this.OperationButtonClicked);
@@ -500,6 +524,7 @@
             this.TxtMainDisplay.ReadOnly = true;
             this.TxtMainDisplay.Size = new System.Drawing.Size(360, 64);
             this.TxtMainDisplay.TabIndex = 27;
+            this.TxtMainDisplay.TabStop = false;
             this.TxtMainDisplay.Text = "0";
             this.TxtMainDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtMainDisplay.WordWrap = false;
@@ -515,6 +540,7 @@
             this.TxtSubDisplay.ReadOnly = true;
             this.TxtSubDisplay.Size = new System.Drawing.Size(360, 32);
             this.TxtSubDisplay.TabIndex = 28;
+            this.TxtSubDisplay.TabStop = false;
             this.TxtSubDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtSubDisplay.WordWrap = false;
             // 
